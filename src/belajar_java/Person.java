@@ -7,10 +7,10 @@ public class Person {
 	
 	//MENGGUNAKAN METODE CONSTRUCTOR OVERLOADING
 	//CONSTRUCTOR TANPA PARAMETER == TANPA CONSTRUCTOR
-	public Person() {
-	}
+//	public Person() {
+//	}
 		
-	//CONTRUCTOR DENGAN 2 PARAMETER
+//	CONSTRUCTOR DENGAN 2 PARAMETER
 	public Person(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
@@ -18,6 +18,7 @@ public class Person {
 	}
 	
 	//CONSTRUCTOR DENGAN 3 PARAMETER
+	//yang diterapkan di main
 	public Person(String firstName, String lastName, String domisili) {
 		super();
 		this.firstName = firstName;

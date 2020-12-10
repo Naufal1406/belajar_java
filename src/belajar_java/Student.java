@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Student extends Person implements StudentData {
-	public int total;
+	public int total; 
 	private String studentID;
 	
 	Scanner scanner = new Scanner(System.in);
@@ -15,18 +15,20 @@ public class Student extends Person implements StudentData {
 		this.studentID = studentID;
 	}
 	
-	//OVERRIDING METHOD YANG ADA DI SUPERCLASS YAITU fullName
+	//METHOD OVERRIDING  YANG ADA DI SUPERCLASS YAITU fullName dengan title
 	@Override
 	public String fullName() {
 		// TODO Auto-generated method stub
 		return super.fullName() + " S.T";
 	}
 
-	//GETTER UNTUK MENGOPER VALUE DARI INPUTAN USER BIAR BISA DIAKSES DI SEMUA CLASS 
+	//GETTER UNTUK MENGOPER VALUE DARI INPUTAN USER BIAR BISA DIAKSES DI SEMUA CLASS
+	//TOTAL SKS YANG DIINPUTKAN UNTUK MENENTUKAN ADA TITLE ATAU TIDAK
 	public int getTotal() {
 		return total;
 	}
 	
+	//METHOD UNTUK MENDAPATKAN NILAI DARI StudentID (GETTER)
 	public String getStudentID() {
 		return studentID;
 	}
@@ -39,15 +41,7 @@ public class Student extends Person implements StudentData {
 		
 	}
 
-	//IMPLEMENTS DARI INTERFACE StudentData
-//	@Override
-//	public void studentRegistration() {
-//		Person person = new Person("Mochamad", "Farid Naufal");
-//		System.out.println(person.fullName());
-//		// TODO Auto-generated method stub
-//		
-//	}
-	
+	//METHOD TOTAL SKS YANG SEDANG DIAMBIL DI SEMESTER INI (INPUTAN USER)
 	private int totalCredit;
 
 	@Override
@@ -56,7 +50,7 @@ public class Student extends Person implements StudentData {
 		int i = 0;
 				
 		//MENDEKLARASI JUMLAH 
-		System.out.println("Berapa mata kuliah yang diambil semester ini :");
+		System.out.print("Berapa mata kuliah yang diambil semester ini : ");
 		totalCredit = scanner.nextInt();
 		
 		//DEKLARASI ARRAY KOSONG
@@ -69,37 +63,39 @@ public class Student extends Person implements StudentData {
 		for(i = 0 ; i < totalCredit ; i++){
 			//Menggunakan Array masing-masing untuk menyimpan data Dosen, Matakuliah dan Bobot 
 			System.out.println("Mata kuliah ke - " + (i+1));
-			System.out.println("Nama Dosen\t\t: ");
+			System.out.print("Nama Dosen\t\t: ");
 			lecturer[i] = scanner.next();
 					
-			System.out.println("Nama Mata Kuliah\t: ");
+			System.out.print("Nama Mata Kuliah\t: ");
 			courseName[i] = scanner.next();
 			
-			System.out.println("Bobot SKS\t\t: ");
+			System.out.print("Bobot SKS\t\t: ");
 			credit[i] = scanner.nextInt();
 			
-			System.out.println("Ruangan \t\t: ");
+			System.out.print("Ruangan \t\t: ");
 			room[i] = scanner.next();
 			System.out.println();
 		}
+//		System.out.println("\n======================================");
+//		System.out.println("DAFTAR DOSEN, MATAKULIAH DAN BOBOT");
+//		System.out.print("Daftar nama dosen mata kuliah : ");
+//		System.out.println(Arrays.toString(lecturer));
+//		System.out.print("Daftar nama mata kuliah : ");
+//		System.out.println(Arrays.toString(courseName));
+//		System.out.print("Daftar bobot sks masing-masing mata kuliah : ");
+//		System.out.println(Arrays.toString(credit));
+//		System.out.print("Daftar ruangan masing-masing mata kuliah : ");
+//		System.out.println(Arrays.toString(room));
+		
 		System.out.println("\n======================================");
 		System.out.println("DAFTAR DOSEN, MATAKULIAH DAN BOBOT");
-		System.out.print("Daftar nama dosen mata kuliah : ");
-		System.out.println(Arrays.toString(lecturer));
-		System.out.print("Daftar nama mata kuliah : ");
-		System.out.println(Arrays.toString(courseName));
-		System.out.print("Daftar bobot sks masing-masing mata kuliah : ");
-		System.out.println(Arrays.toString(credit));
-		System.out.print("Daftar ruangan masing-masing mata kuliah : ");
-		System.out.println(Arrays.toString(room));
-				
-//		System.out.println(dosen + " Merupakan Dosen Pengampu Mata Kuliah " + matkul);
-//		System.out.println("Mata kuliah tersebut memiliki bobot " + bobot + " sks ");
-		
-		
-//		System.out.println(this.lecturer + " Merupakan Dosen Pengampu Mata Kuliah " + this.mataKuliah);
-//		System.out.println("Mata kuliah tersebut memiliki bobot " + this.sks + " sks ");
-//		return this.lecturer + " Merupakan Dosen Pengampu Mata Kuliah " + this.mataKuliah + " adalah " + this.sks + " sks ";
+		for(i = 0 ; i < totalCredit ; i++) {
+			System.out.println((i+1) + ".\tNama Dosen\t\t: " + lecturer[i]);
+			System.out.println("\tNama Mata Kuliah\t: " + courseName[i]);
+			System.out.println("\tBobot SKS\t\t: " + credit[i]);
+			System.out.println("\tRuangan\t\t\t: " + room[i]);
+			System.out.println();
+		}
 	}
 	
 	@Override

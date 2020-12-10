@@ -18,7 +18,6 @@ public class Main {
 	System.out.println("DATA DIRI MAHASISWA");
 	System.out.println(person.fullName());
 	System.out.println(person.location());
-//	System.out.println(student.getSchedule());
 	System.out.println(student.totalSks());
 	
 	
